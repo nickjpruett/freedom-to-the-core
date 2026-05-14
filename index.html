@@ -569,7 +569,47 @@
     font-size:10px; letter-spacing:0.3em;
     text-transform:uppercase; color:rgba(212,168,67,0.3);
   }
+.contact-form {
+  max-width: 620px;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212,168,67,0.2);
+  color: var(--cream);
+  font-size: 16px;
+  font-family: 'EB Garamond', serif;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+}
 
+.contact-form textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.05);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(247,240,230,0.4);
+}
+
+.contact-form button {
+  margin-top: 10px;
+  cursor: pointer;
+}
+  
   /* ANIMATIONS */
   @keyframes fade-rise {
     from { opacity:0; transform:translateY(22px); }
@@ -882,10 +922,43 @@
       <div class="ornament-line r"></div>
     </div>
 
-    <div class="register-cta-wrap reveal">
-      <a href="mailto:Pastormax@khaca.org" class="btn-primary">Email to Register</a>
-      <a href="tel:6619783225" class="btn-secondary">Call Dr. Max Directly</a>
-    </div>
+   <form
+  action="https://formspree.io/f/mgodjygz"
+  method="POST"
+  class="contact-form reveal"
+>
+
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    required
+  >
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+  >
+
+  <textarea
+    name="message"
+    placeholder="How can we pray for or help you?"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn-primary">
+    Send Message
+  </button>
+
+</form>
 
     <p style="margin-top:44px; font-size:15px; font-style:italic; color:rgba(247,240,230,0.3); text-align:center;" class="reveal">
       "For God has not given us a spirit of fear, but of power and of love and of a sound mind." — 2 Timothy 1:7
