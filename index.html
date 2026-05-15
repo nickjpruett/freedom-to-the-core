@@ -401,31 +401,13 @@
     border-top:1px solid rgba(212,168,67,0.12);
     border-bottom:1px solid rgba(212,168,67,0.12);
   }
-.pastor-photo-wrap {
+  .pastor-photo-wrap {
   display:flex;
   justify-content:center;
   align-items:center;
-  position:relative;
-}
-
-.pastor-photo-wrap::before {
-  content:'';
-  position:absolute;
-  width:85%;
-  height:85%;
-  background:radial-gradient(
-    circle,
-    rgba(212,168,67,0.35) 0%,
-    rgba(212,168,67,0.12) 40%,
-    transparent 75%
-  );
-  filter:blur(35px);
-  z-index:0;
 }
 
 .pastor-photo {
-  position:relative;
-  z-index:1;
   width:100%;
   max-width:340px;
   border-radius:18px;
@@ -868,45 +850,7 @@
   <div class="section-wrap">
     <div class="drmax-inner">
       <div class="reveal">
-  .pastor-photo-wrap {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-
-.pastor-photo-wrap::before {
-  content:'';
-  position:absolute;
-  width:85%;
-  height:85%;
-  background:radial-gradient(
-    circle,
-    rgba(212,168,67,0.35) 0%,
-    rgba(212,168,67,0.12) 40%,
-    transparent 75%
-  );
-  filter:blur(35px);
-  z-index:0;
-}
-
-.pastor-photo {filter:grayscale(100%);
-transition:all 0.5s ease;
-  .pastor-photo:hover {
-  filter:grayscale(0%);
-  transform:translateY(-4px);
-}
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-width:340px;
-  border-radius:18px;
-  border:1px solid rgba(212,168,67,0.25);
-  box-shadow:
-    0 0 60px rgba(155,28,28,0.25),
-    0 10px 40px rgba(0,0,0,0.5);
-  object-fit:cover;
-}
+  <div class="pastor-photo-wrap">
     <img src="pastor-max.jpg" alt="Pastor Max Van Dyke" class="pastor-photo">
   </div>
 </div>
