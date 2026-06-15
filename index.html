@@ -6,7 +6,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-R12VN7XN19');
 </script>
 <head>
@@ -208,6 +207,62 @@
     border-color:var(--gold); color:var(--gold);
   }
 
+  /* EVENTBRITE BUTTON */
+  .btn-eventbrite {
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:22px 56px;
+    background:linear-gradient(135deg, #F05537 0%, #D4432A 100%);
+    color:#fff;
+    font-family:'Oswald',sans-serif;
+    font-size:14px; font-weight:500;
+    letter-spacing:0.3em; text-transform:uppercase;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,0.2);
+    position:relative; overflow:hidden;
+    transition:all 0.35s ease;
+    box-shadow:0 8px 40px rgba(240,85,55,0.35);
+  }
+  .btn-eventbrite:hover {
+    transform:translateY(-3px);
+    box-shadow:0 16px 60px rgba(240,85,55,0.55);
+    background:linear-gradient(135deg, #FF6B50 0%, #E8472E 100%);
+  }
+  .btn-eventbrite-icon { font-size:18px; }
+
+  /* EVENTBRITE BANNER (inside conference section) */
+  .eb-banner {
+    margin-top:36px;
+    padding:32px 40px;
+    background:linear-gradient(135deg, rgba(240,85,55,0.12) 0%, rgba(107,15,15,0.3) 100%);
+    border:1px solid rgba(240,85,55,0.35);
+    display:flex; flex-direction:column;
+    align-items:center; gap:16px;
+    position:relative; overflow:hidden;
+  }
+  .eb-banner::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at center, rgba(240,85,55,0.06) 0%, transparent 70%);
+  }
+  .eb-banner-label {
+    font-family:'Oswald',sans-serif;
+    font-size:10px; font-weight:400;
+    letter-spacing:0.5em; text-transform:uppercase;
+    color:rgba(240,85,55,0.8);
+  }
+  .eb-banner-title {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(18px,2.5vw,26px);
+    color:var(--white); font-style:italic;
+    text-align:center;
+  }
+  .eb-banner-sub {
+    font-size:14px; font-style:italic;
+    color:rgba(247,240,230,0.55);
+    text-align:center;
+  }
+
   /* ORNAMENT */
   .ornament {
     display:flex; align-items:center; gap:20px;
@@ -401,40 +456,38 @@
     border-top:1px solid rgba(212,168,67,0.12);
     border-bottom:1px solid rgba(212,168,67,0.12);
   }
-.pastor-photo-wrap {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-}
-
-.pastor-photo-wrap::before {
-  content:'';
-  position:absolute;
-  width:85%;
-  height:85%;
-  background:radial-gradient(
-    circle,
-    rgba(212,168,67,0.35) 0%,
-    rgba(212,168,67,0.12) 40%,
-    transparent 75%
-  );
-  filter:blur(35px);
-  z-index:0;
-}
-
-.pastor-photo {
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-width:340px;
-  border-radius:18px;
-  border:1px solid rgba(212,168,67,0.25);
-  box-shadow:
-    0 0 60px rgba(155,28,28,0.25),
-    0 10px 40px rgba(0,0,0,0.5);
-  object-fit:cover;
-}
+  .pastor-photo-wrap {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+  }
+  .pastor-photo-wrap::before {
+    content:'';
+    position:absolute;
+    width:85%;
+    height:85%;
+    background:radial-gradient(
+      circle,
+      rgba(212,168,67,0.35) 0%,
+      rgba(212,168,67,0.12) 40%,
+      transparent 75%
+    );
+    filter:blur(35px);
+    z-index:0;
+  }
+  .pastor-photo {
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:340px;
+    border-radius:18px;
+    border:1px solid rgba(212,168,67,0.25);
+    box-shadow:
+      0 0 60px rgba(155,28,28,0.25),
+      0 10px 40px rgba(0,0,0,0.5);
+    object-fit:cover;
+  }
   .drmax-inner {
     display:grid; grid-template-columns:auto 1fr;
     gap:72px; align-items:center;
@@ -612,47 +665,43 @@
     font-size:10px; letter-spacing:0.3em;
     text-transform:uppercase; color:rgba(212,168,67,0.3);
   }
-.contact-form {
-  max-width: 620px;
-  margin: 50px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 18px 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,168,67,0.2);
-  color: var(--cream);
-  font-size: 16px;
-  font-family: 'EB Garamond', serif;
-  outline: none;
-  transition: border-color 0.3s, background 0.3s;
-}
+  .contact-form {
+    max-width: 620px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(212,168,67,0.2);
+    color: var(--cream);
+    font-size: 16px;
+    font-family: 'EB Garamond', serif;
+    outline: none;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .contact-form textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.05);
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: rgba(247,240,230,0.4);
+  }
+  .contact-form button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
 
-.contact-form textarea {
-  min-height: 160px;
-  resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--gold);
-  background: rgba(255,255,255,0.05);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(247,240,230,0.4);
-}
-
-.contact-form button {
-  margin-top: 10px;
-  cursor: pointer;
-}
-  
   /* ANIMATIONS */
   @keyframes fade-rise {
     from { opacity:0; transform:translateY(22px); }
@@ -707,7 +756,7 @@
   </p>
 
   <div class="hero-btns">
-    <a href="#register" class="btn-primary">Register for Classes</a>
+    <a href="https://www.eventbrite.com/e/freedom-to-the-core-tickets-1991847162482" target="_blank" class="btn-primary">Register for Classes</a>
     <a href="#deliverance" class="btn-secondary">Learn More</a>
   </div>
 </section>
@@ -868,10 +917,10 @@
   <div class="section-wrap">
     <div class="drmax-inner">
       <div class="reveal">
-  <div class="pastor-photo-wrap">
-    <img src="pastor-max.jpg" alt="Pastor Max Van Dyke" class="pastor-photo">
-  </div>
-</div>
+        <div class="pastor-photo-wrap">
+          <img src="pastor-max.jpg" alt="Pastor Max Van Dyke" class="pastor-photo">
+        </div>
+      </div>
       <div class="reveal rd2">
         <span class="s-eyebrow">Your Guide to Freedom</span>
         <h2 class="s-title">Dr. Max <em>Van Dyke</em></h2>
@@ -899,8 +948,17 @@
   <span class="conf-label reveal">Upcoming Event</span>
   <h2 class="conf-title reveal">Freedom To The Core<br>Conference</h2>
   <p class="conf-sub reveal">A powerful two-day event. Deliverance. Teaching. Breakthrough.<br>Come ready to leave different than you arrived.</p>
-  <div class="reveal"><div class="conf-tag">Two-Day Event &nbsp;·&nbsp; Contact Dr. Max for Dates</div></div>
-  <div class="reveal"><a href="#register" class="btn-primary">Register Now</a></div>
+
+  <!-- EVENTBRITE BANNER -->
+  <div class="eb-banner reveal" style="max-width:600px; margin:36px auto;">
+    <span class="eb-banner-label">🎟 Now Open — Secure Your Seat</span>
+    <p class="eb-banner-title">Freedom To The Core — 2-Day Class</p>
+    <p class="eb-banner-sub">Registration is open on Eventbrite. Spots are limited — don't wait.</p>
+    <a href="https://www.eventbrite.com/e/freedom-to-the-core-tickets-1991847162482" target="_blank" class="btn-eventbrite">
+      <span class="btn-eventbrite-icon">🎟</span>
+      Register on Eventbrite
+    </a>
+  </div>
 </section>
 
 <!-- ██ YOUTUBE ██ -->
@@ -940,6 +998,15 @@
       have questions — reach out. Our team is here to support and pray with you.
     </p>
 
+    <!-- EVENTBRITE PRIMARY CTA -->
+    <div class="reveal" style="text-align:center; margin-top:40px;">
+      <a href="https://www.eventbrite.com/e/freedom-to-the-core-tickets-1991847162482" target="_blank" class="btn-eventbrite" style="font-size:15px; padding:24px 64px;">
+        <span class="btn-eventbrite-icon">🎟</span>
+        Register for the 2-Day Class on Eventbrite
+      </a>
+      <p style="margin-top:14px; font-family:'Oswald',sans-serif; font-size:11px; letter-spacing:0.3em; text-transform:uppercase; color:rgba(212,168,67,0.45);">Secure · Fast · Opens in Eventbrite</p>
+    </div>
+
     <div class="contact-cards">
       <a href="mailto:Pastormax@khaca.org" class="contact-card reveal rd1">
         <span class="contact-icon">✉️</span>
@@ -964,43 +1031,17 @@
       <div class="ornament-line r"></div>
     </div>
 
-   <form
-  action="https://formspree.io/f/mgodjygz"
-  method="POST"
-  class="contact-form reveal"
->
-
-  <input
-    type="text"
-    name="name"
-    placeholder="Your Name"
-    required
-  >
-
-  <input
-    type="email"
-    name="email"
-    placeholder="Your Email"
-    required
-  >
-
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone Number"
-  >
-
-  <textarea
-    name="message"
-    placeholder="How can we pray for or help you?"
-    required
-  ></textarea>
-
-  <button type="submit" class="btn-primary">
-    Send Message
-  </button>
-
-</form>
+    <form
+      action="https://formspree.io/f/mgodjygz"
+      method="POST"
+      class="contact-form reveal"
+    >
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <textarea name="message" placeholder="How can we pray for or help you?" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
 
     <p style="margin-top:44px; font-size:15px; font-style:italic; color:rgba(247,240,230,0.3); text-align:center;" class="reveal">
       "For God has not given us a spirit of fear, but of power and of love and of a sound mind." — 2 Timothy 1:7
